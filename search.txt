@@ -7,7 +7,7 @@ Different between echo and print in php
 
 setType => code  == what is it and what is usage of it
 ❑ What is isset() and empty() functions and the
- difference between them?
+ difference between them?   => at another new session
 ❑ What is the meaning of variable of variable?
 ❑ What is variable scope and its types???
 ❑ What is the difference between ? And 
