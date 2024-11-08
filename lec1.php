@@ -380,12 +380,19 @@ $x=5;
 // // echo "hello,",$name;
 // echo "hello,".$name;
 
-$X=500;
-if(($X%2)==0)
-{
-    print("Even");
-}else{
-    print("Odd");
-}
+// $X=500;
+// if(($X%2)==0)
+// {
+//     print("Even");
+// }else{
+//     print("Odd");
+// }
+
+// $x="ahmed";
+// $$x="khaled";
+// print($ahmed);
+$y;
+echo($y??"yousef")
+
 ?>
 
