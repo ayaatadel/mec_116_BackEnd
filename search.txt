@@ -18,3 +18,8 @@ setType => code  == what is it and what is usage of it
 search with code ====> ponous => 3 degree
  * callBack
  * recursive 
+
+
+ //////////////// oop
+ // types of inheritance ==> permited in php and non permitted
+ ===> abstract and interface
