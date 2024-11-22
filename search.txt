@@ -23,3 +23,14 @@ search with code ====> ponous => 3 degree
  //////////////// oop
  // types of inheritance ==> permited in php and non permitted
  ===> abstract and interface
+sara==> bouns
+karas==> bounous
+yousef abdo==> bounous
+malak  ==> abstract , bounous
+
+ ===============================
+
+ // oop lec2
+ ❑ What is single tone design pattern?
+❑ How can apply Multiple Inheritance?
+❑ What is destructor ?
