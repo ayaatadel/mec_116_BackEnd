@@ -31,6 +31,7 @@ malak  ==> abstract , bounous
  ===============================
 
  // oop lec2
+ // What is trait and nameSpace with Code
  ❑ What is single tone design pattern?
 ❑ How can apply Multiple Inheritance?
 ❑ What is destructor ?
