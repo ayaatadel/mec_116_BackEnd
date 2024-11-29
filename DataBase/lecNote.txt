@@ -1,0 +1,46 @@
+ERD===> Entity RelationShip Diagram
+==> Entity  ==> person , job
+/**
+Entity ==> strong Entity , week entity(dependant to strong entity)
+==> attributes  ==> name , id , age , DOB , phone
+==> single, simple attribute ==> position
+===> key attribute ==> id
+==> composite attribute ==> name==> Fname , Lname
+==> MultiValue attribute ==> phone ==> 010025950074 , 011253510420
+                         ==> address==> cairo , alex
+==> derived attribute ==> attribute can calculated from another attribute  => DOB , Age ==> age (derived attribute)
+
+/**
+==> types of key attribute :  
+https://www.geeksforgeeks.org/types-of-keys-in-relational-model-candidate-super-primary-alternate-and-foreign/
+
+*/
+
+*/
+
+
+
+
+==> RelationShip ==> relation between 1entity ,  2 entity or more
+
+strong relation ==> strong entities ,
+week relation  => week enitity and strong entity
+
+
+/* === > RelationShip
+===> Degree of a Relationship  => number of entities in relation
+1-(Unary / Recursive / self) relation
+2- binary relation 
+3 - ternary relation 
+4 - n-ary relation ==> n: refer to number of entites
+
+
+===================> 
+Cardinality Ratio   ==> number that can participate in relation
+1:1  ==> one to one
+1:m ===> one to many
+m:n ==> many to many
+
+
+*/
+
