@@ -41,7 +41,83 @@ drop table tableName********** notes ==> you can drop child table then parent ta
 
 2- insert data in project with relation to department=>
 INSERT INTO project (id , name,location,department_id) values(1,"php","mec",1)
-3-
+
+
+================================ *********************** ====================
+                                Dealing with data in tables
+1-select all data in table employee => select * from employee
+1-select sepecific cloumn data in table employee => select name , salary from employee;
+
+============== Alias ==> show column with alias name
+select name as employeeName, salary as employeeSalary from employee;
+
+============  condition => where , in , between 
+1- where => select name as employeeName, salary as employeeSalary from employee WHERE salary>30000;
+
+2- in ==> range
+select name as employeeName, salary as employeeSalary from employee WHERE salary in(30000,50000);
+====> 30000 , 50000
+3- between => range
+select name as employeeName, salary as employeeSalary from employee WHERE salary BETWEEN 30000 and 50000;
+===> 30000,40000,50000
+
+================================> update value in column 
+1- condition => UPDATE employee set address ="helwan" WHERE name ="mohammmed";
+2- with out condition=>update all data in column=> UPDATE employee set address ="helwan" 
+
+==> and , or , not
+UPDATE employee set address ="cairo" WHERE name ="mohammmed" and address="helwan";
+*********** and ==> true and true
+
+UPDATE employee set address ="cairo" WHERE name ="mohammmed" or address="helwan";
+*********** or ==> true and false ==> true
+
+******** not==>SELECT * FROM employee WHERE NOT address='london';
+         true => false , false ==> true
+
+
+=====================> select data in or order 
+SELECT * FROM employee ORDER BY salary DESC;
+
+=========> select data using order and condition ==> -1- condition 2- order BY
+SELECT * FROM employee  WHERE salary BETWEEN 30000 and 40000 ORDER BY name  DESC;
+
+=======> select data using limit of columns==>SELECT * FROM employee LIMIT 2;
+===========> condition : SELECT * FROM employee WHERE salary > 30000 LIMIT 2;
+
+**********************  Aggregiation functions : sum , avg , count , min , max
+SELECT MAX(salary) AS LargestSalary 
+FROM employee ;
+
+SELECT MIN(salary) AS LargestSalary 
+FROM employee ;
+
+SELECT avg(salary) AS LargestSalary FROM employee;
+
+SELECT sum(salary) AS LargestSalary FROM employee;
+
+SELECT count(salary) AS LargestSalary FROM employee;
+
+=====================================================
+like operator ==> SELECT * FROM employee WHERE name LIKE 'k%s%';
+==> start with k and end with s
+
+====================================== delete data from colmuns
+delete from emplyee where id = 1  => id=1
+
+delete from emplyee ==> delete all data 
+
+
+
+
+
+
+=====================>
+export data ==> database name==> export
+import data ==> create new database ==> import ==> select file of data
+
+
+
 
 
 ===========================**********************************===================
