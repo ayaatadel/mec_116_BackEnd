@@ -17,6 +17,7 @@ $uerPsaaword = "";
 // host   dbname
 $connection = new PDO("$dbType:host=$host;dbname=$dbName", $userName, $uerPsaaword); // dbTpye
 // var_dump($connection);
+session_start();
 
 
 
