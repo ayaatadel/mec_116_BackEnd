@@ -19,6 +19,17 @@ if(isset($_POST['deleteBtn']))
     }
 }
 
+if(isset($_POST['addUser']))
+{
+    $userName=$_POST['name'];
+    $userEmail=$_POST['email'];
+    $userPassword=$_POST['password'];
+    $database->insert2("users",["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
+    header('location:allUsers.php?error= user Added Successfully ');
+    // $database->insert("users",["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
+    // header('location:allUsers.php?error= user Added Successfully ');
+        exit();
+}
 
 
 ?>

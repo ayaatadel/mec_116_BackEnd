@@ -24,6 +24,7 @@ $usersData = $database->index("users");
 
         <body>
             <h1 class="text-center text-info">All Users Data</h1>
+            <a href="./addUser.php" class="btn btn-primary my-3">Add User</a>
 
 
             <table class="table table-striped w-75 m-auto border bordered p-1">

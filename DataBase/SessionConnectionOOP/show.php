@@ -54,6 +54,7 @@ if(!$id)
                 echo "<td>
                   <a> <button class='btn btn-warning'>Show </button></a>
                   <a><button class='btn btn-danger'>delete </button> </a>
+                  <a href='allUsers.php'> <button class='btn btn-success'>Back </button> </a>
                 
                 </td>";
 
