@@ -234,7 +234,11 @@ interface Animal{
     function sound():void; // abstract function
     function printName();
 }
-interface Mammel{
+interface Animal2{
+    function test():void; // abstract function
+    function printName();
+}
+interface Mammel extends Animal ,Animal2{
     function type():string;  
 }
 class Dog implements Animal{
@@ -254,6 +258,10 @@ class cat implements Animal ,Mammel{
     }
     function printName(){
         echo "Name";
+    }
+    function test():void
+    {
+        echo "test";
     }
 }
 ?>

@@ -128,12 +128,12 @@ comment on multi line
             
 /**
  * atrthmatic operator
- * +   -  / *   % 
+ * +   -  / *   % **==> ^
  */
 
 
-//  $num1=5;
-//  $num2=2;
+//  $num1=5;   5/2=2   ==> 1    6%2 ==> 6/2=3   10%3 ==> 10/3=3  1   15%13= 15/13=1 ==>2
+//  $num2=2; 
 //  echo "num1+num2  = ",$num1+$num2 ,"<br>";
 //  echo "num1-num2  = ",$num1-$num2 ,"<br>";
 //  echo "num1*num2  = ",$num1*$num2 ,"<br>";
@@ -152,7 +152,7 @@ comment on multi line
 
 //============================  logical  operators
 /**
- * logical  operator
+ * logical  operator  ==>conditions
  * &&  || !
  * && => value(true)==> true && true
  * ||  => value(true)  => true || false
@@ -180,7 +180,7 @@ comment on multi line
 
 /**
  * comparison operators
- * > < <= >= != <> , !==
+ * > < <= >= != <> , != !== !===
  * 
  * ==   :=>value 
  * ===  :=> value , dataType

@@ -10,7 +10,7 @@ echo "<h3 style='text-align:center'> Day 4 </h3>";
 
 /**
  * function  => block of code => resuable 
- * function functionNme(){}
+ * function functionNme(){ body}
  * call function ==> functionNme()
  * 
  * ======types=====
@@ -27,7 +27,7 @@ echo "<h3 style='text-align:center'> Day 4 </h3>";
  * preDefined Functions ==> php==> count()=> length, push
  */
 
-// not return  , not parametarized
+// not return  ==> void , not parametarized
 // function display1()
 // {
 //     echo "hello world"  ;

@@ -16,9 +16,9 @@ if(isset($_GET['message']))
     <form action="./server.php" class="w-75 m-auto" method="post">
 
     <label class="form-control m-3 p-2" for="email">User Email</label>
-    <input class="form-control m-3 p-2" type="email" name="email" id="email">
+    <input class="form-control m-3 p-2" type="text" name="email" id="email">
     <label class="form-control m-3 p-2" for="password">User Password</label>
-    <input class="form-control m-3 p-2" type="password" name="password" id="password">
+    <input class="form-control m-3 p-2" type="text" name="password" id="password">
 
     <button type="submit" class="btn btn-primary m-5" name="BtnLogin">Login</button>
 
