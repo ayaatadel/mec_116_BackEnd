@@ -65,50 +65,99 @@ class DB
     try {
       $query = "delete from $table where id=$id";
       $sqlQuery = $this->connection->prepare($query);
-     $sqlQuery->execute();
+      $sqlQuery->execute();
       return true;
-
     } catch (Exception $error) {
       return null;
     }
   }
 
-  function insert($table,array $insertedData)
+  function insert($table, array $insertedData)
   {
     // [name=>"ayaat", email=>"ayaat@gmail.com", password=>"1234" ] 
     // get keys of array , get values of array
     // var_dump($table,$insertedData);
-    $keys=array_keys($insertedData);//[name,email,password]
-    $values=array_values($insertedData); // //[ayaat,ayaat@gmail.com,1234]
-    $keysString=implode(',',$keys);               //' ayaat','ayaat@gmail.com','1234'
-    $valuesString="'".implode("','",$values)."'"; // 'ayaat','ayaat@gmail.com','1234'
+    $keys = array_keys($insertedData); //[name,email,password]
+    $values = array_values($insertedData); // //[ayaat,ayaat@gmail.com,1234]
+    $keysString = implode(',', $keys);               //' ayaat','ayaat@gmail.com','1234'
+    $valuesString = "'" . implode("','", $values) . "'"; // 'ayaat','ayaat@gmail.com','1234'
     // print_r($valuesString);
     // echo "<br>";
     // print_r($keysString);
     // exit;
     // print_r($values);
-     $query="insert into $table ( $keysString) values ($valuesString)";
-     $sqlQuery=$this->connection->prepare($query);
-     $sqlQuery->execute();
-     return true;
+    $query = "insert into $table ( $keysString) values ($valuesString)";
+    $sqlQuery = $this->connection->prepare($query);
+    $sqlQuery->execute();
+    return true;
   }
 
-  function insert2($table,array $insertedData)
+  function insert2($table, array $insertedData)
   {
     // ? :key
     // [name=>"ayaat", email=>"ayaat@gmail.com", password=>"1234" ] 
     // get keys of array , get values of array
     // var_dump($table,$insertedData);
-    $keys=array_keys($insertedData);//[name,email,password]
-    $values=array_values($insertedData); // //[ayaat,ayaat@gmail.com,1234]
-    $keysString=implode(',',$keys);               //[name,email,password
-    $valuesString=array_fill(0,count($values),"?");   //[?,?,?]   // :key
-    $valuesPlaceholder=implode(',',$valuesString); 
-     $query="insert into $table ( $keysString) values ($valuesPlaceholder)";
-     $sqlQuery=$this->connection->prepare($query);
-     $sqlQuery->execute($values);
-     return true;
+    $keys = array_keys($insertedData); //[name,email,password]
+    $values = array_values($insertedData); // //[ayaat,ayaat@gmail.com,1234]
+    $keysString = implode(',', $keys);               //[name,email,password
+    $valuesString = array_fill(0, count($values), "?");   //[?,?,?]   // :key
+    $valuesPlaceholder = implode(',', $valuesString);
+    $query = "insert into $table ( $keysString) values ($valuesPlaceholder)";
+    $sqlQuery = $this->connection->prepare($query);
+    $sqlQuery->execute($values);
+    return true;
   }
+
+  // function update($table, $id, array $updatedData)
+  // {
+  //   // $updatedDate=["name"=>"ayaat", "email"=>"ayaat@gmail.com", "password"=>"1234" ]; 
+  //   $placeholder = "";
+  //   // $query="update $table set key=value where id=$id";
+
+  //   foreach ($updatedData as $key => $value) {
+  //     # code...
+  //     $placeholder .= "$key = ?, "; // "name='ayat',email='ayaat@gmail.com',password='123',"
+  //     // $placeholder.="$key='$value',";// "name='ayat',email='ayaat@gmail.com',password='123',"
+  //     //$placeholder=rtrim($placeholder,", ")
+  //     $placeholder = substr($placeholder, 0, -2);
+  //   }
+  //   // $query="update $table set $placeholder where id=$id";
+  //   $query = "update $table set $placeholder where id = ?";
+  //   var_dump($query);
+  //   $sqlQuery = $this->connection->prepare($query);
+  //   $values = array_values($updatedData);
+  //   // $sqlQuery->execute();
+  //   // $sqlQuery->execute($values);
+  //   $sqlQuery->execute([...$values, $id]);
+  // }
+
+  function update($table, $id, array $updatedData){
+    // // $query="update $table set key=value where id=$id";
+    // update users set name="ayaat", email="ayaat@gmail.com",passwprd="1234558" where id=1
+    // $updatedData = ["name"=>"eman", "email"=>"eman@gmail.com"];
+    //  for loop , foreach
+
+    $placeholder ="";
+    foreach($updatedData as $key => $value){
+        $placeholder.="$key = ?, ";
+        // $placeholder.="$key = '$value', "; // $placeholder="name='ayaat',email='ayaat@gmail.com',password=''123456', "
+    }
+    
+    // $placeholder = "name = 'eman', email = 'eman@gmail.com', ";
+    $placeholder = rtrim($placeholder, ", "); //or
+    // $placeholder="name='ayaat',email='ayaat@gmail.com',password=''123456'"
+    // $placeholder = substr($placeholder,0,-2);
+    $query = "update $table set $placeholder where id = ?";
+    // $query = "update $table set $placeholder where id = $id";
+
+    $sqlQuery = $this->connection->prepare($query);
+
+    $values = array_values($updatedData);
+
+    $sqlQuery->execute([...$values, $id]);
+    $sqlQuery->execute();
+}
 }
 $database = new DB(dbType: "mysql", dbName: 'mec_project_116', host: "localhost", userName: "root", userPassword: "");
 // var_dump($database);

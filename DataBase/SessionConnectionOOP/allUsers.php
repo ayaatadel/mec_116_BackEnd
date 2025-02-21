@@ -1,8 +1,9 @@
 <?php
-
+include './bootstrap.php';
 // select method index
 require('./index.php');
 $usersData = $database->index("users");
+// $users = $database->index("users"); 
 // var_dump($usersData);
 // exit;
 // $rowKeys = array_keys($usersData[0]); // extract associative array get keys
@@ -23,8 +24,8 @@ $usersData = $database->index("users");
         </head>
 
         <body>
-            <h1 class="text-center text-info">All Users Data</h1>
-            <a href="./addUser.php" class="btn btn-primary my-3">Add User</a>
+            <h1 class="text-center text-info mt-3">All Users Data</h1>
+            <a href="./addUser.php" class="btn btn-success  mx-5">Add User</a>
 
 
             <table class="table table-striped w-75 m-auto border bordered p-1">
@@ -69,8 +70,9 @@ $usersData = $database->index("users");
                         echo "<td>" . $user['name'] . "</td>";
                         echo "<td>" . $user['email'] . "</td>";
                         // echo "<td>" .$user['password']. "</td>";
-                        echo "<td>
+                        echo "<td class='d-flex gap-3'>
                         <a href='./show.php?id=".$user['id']."'> <button class='btn btn-warning'>Show </button></a>
+                        <a href='./editUser.php?id=".$user['id']."'> <button class='btn btn-primary'>Edit </button></a>
                         
                        <form action='./manageUser.php' method='POST'> 
                        <input type='hidden' name='id' value=".$user['id'].">

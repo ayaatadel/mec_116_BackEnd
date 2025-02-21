@@ -4,3 +4,61 @@
 
 
 
+
+
+/////////////// 
+1- function update ($table,$id,$updatedData){
+
+}
+
+
+// button ==> update ==>$ id uder update ==>form ==> updatedData
+
+manager.php 
+$if(isset($_POST['editUser]))
+{
+    $name=$_POST['name']??null
+    // regular expression
+    if(!strlen($_POST['name'])>0){
+        echo "<p class='alert alert-danger'> you must eenter your name </p>";
+        exit;
+    }
+
+    $email=$_POST['email']??null
+    $password=$_POST['password']??null
+    $id=$_POST['id']??null
+    $database->update("users",$id,["name"=>$name,"email"=>$email,"password"=>$password])
+header('location:allsuers.php'?message="user updated successfully");
+}
+
+
+//index.php 
+class DB{
+    function update($table,$id,$updatedData)
+    {
+        $uValue="";
+      //  ["name"=>"eman", "email"=>"eman@gmail.com"]
+        "name = 'eman', email = 'eman@gmail.com'";
+        foreach($updatedData as $key=>value)
+        {
+            $uvalue.="$key=?,";// name = 'eman', email = 'eman@gmail.com',";
+           // $uvalue= substr==> ($uvalu,0,-2)
+           trim=> start
+           //  $uvalue=rtrim($uvalu,',')
+           // rtrim=> end
+
+        }
+
+            //$query=update $table set key=value where id=$id 
+            $query=update $table set key=$uvalu where id=?
+            $sqlQuery=$this->connection->prepare($query)
+            $sqlQuery->execute([...$uvalu,$id]);
+
+            // sqlInjection==> : ?
+
+
+    }
+} 
+// input hidden ==> after submit ==> server ==> function update("users",user['id'])
+
+

@@ -21,11 +21,24 @@ if(isset($_POST['deleteBtn']))
 
 if(isset($_POST['addUser']))
 {
-    $userName=$_POST['name'];
-    $userEmail=$_POST['email'];
-    $userPassword=$_POST['password'];
+    $userName=$_POST['name']??null;
+    $userEmail=$_POST['email']??null;
+    $userPassword=$_POST['password']??null;
     $database->insert2("users",["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
     header('location:allUsers.php?error= user Added Successfully ');
+    // $database->insert("users",["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
+    // header('location:allUsers.php?error= user Added Successfully ');
+        exit();
+}
+
+if(isset($_POST['editUser']))
+{
+    $userName=$_POST['name']??null;
+    $userEmail=$_POST['email']??null;
+    $userPassword=$_POST['password']??null;
+    $id=$_POST['id']??null;
+    $database->update("users",$id,["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
+    header('location:allUsers.php?message= user updated Successfully ');
     // $database->insert("users",["name"=>$userName,"email"=>$userEmail,"password"=>$userPassword]);
     // header('location:allUsers.php?error= user Added Successfully ');
         exit();
