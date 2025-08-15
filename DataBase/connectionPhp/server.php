@@ -22,7 +22,7 @@ if (isset($_POST['BtnRegister'])) {
     // Password Regular Expression  
 
     $passwordPattren = "/^[0-9]{5,10}$/";
-    ///  preg_match ==>Perform a regular expression match
+    ///  preg_match ==>Perform a  regular expression match
     if (!preg_match($passwordPattren, $userPassword)) { {
             header("location:./register.php?message=password must be more than 5 numbers and less than 10");
             exit();  // prevent header execute code after it
